@@ -1,4 +1,5 @@
 jenkins:
+  # this line 
   systemMessage: "Jenkins configuré via JCasC — MR-Jenk pipeline"
   numExecutors: 2
 
@@ -92,9 +93,9 @@ jobs:
             source {
               github {
                 id('buy-01-github-source')
-                repoOwner('maynaou')
+                repoOwner('hamzakouki')
                 repository('buy-01')
-                repositoryUrl('https://github.com/maynaou/buy-01')
+                repositoryUrl('https://github.com/hamzakouki/buy-01.git')
                 configuredByUrl(false)
                 credentialsId('github-creds')
 
