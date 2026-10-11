@@ -55,6 +55,21 @@ services:
       - jenkins-docker
     restart: on-failure
 
+
+  sonarqube:
+    image: sonarqube:26.9.0.129388-community
+    container_name: sonarqube
+    networks:
+      - jenkins
+    ports:
+      - "9000:9000"
+    volumes:
+      - sonarqube-data:/opt/sonarqube/data
+      - sonarqube-extensions:/opt/sonarqube/extensions
+      - sonarqube-logs:/opt/sonarqube/logs
+    restart: unless-stopped
+
+
 networks:
   jenkins:
     name: jenkins
@@ -65,3 +80,12 @@ volumes:
     name: jenkins-data
   jenkins-docker-certs:
     name: jenkins-docker-certs  
+
+  sonarqube-data:
+    name: sonarqube-data
+
+  sonarqube-extensions:
+    name: sonarqube-extensions
+
+  sonarqube-logs:
+    name: sonarqube-logs
