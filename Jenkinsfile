@@ -80,6 +80,7 @@ pipeline {
             ]
 
                     withSonarQubeEnv('SonarQube') {
+                        // Analyze each backend service
                         services.each { service ->
                             dir("backend/${service}") {
                                 sh """
@@ -88,11 +89,36 @@ pipeline {
                               -Dsonar.projectKey=buy-01-${service}
                         """
                             }
+
+                            timeout(time: 5, unit: 'MINUTES') {
+                                def qualityGate = waitForQualityGate()
+                                if (qualityGate.status != 'OK') {
+                                    error("Quality Gate failed for ${service}: ${qualityGate.status}")
+                                }
+                            }
+                        }
+
+                        // Analyze Angular frontend
+                        dir('frontend') {
+                            sh '''
+                        npx sonar-scanner \
+                          -Dsonar.projectKey=buy-01-frontend \
+                          -Dsonar.sources=src \
+                          -Dsonar.exclusions=**/node_modules/**,**/dist/**
+                    '''
+                        }
+
+                        timeout(time: 5, unit: 'MINUTES') {
+                            def qualityGate = waitForQualityGate()
+                            if (qualityGate.status != 'OK') {
+                                error("Quality Gate failed for frontend: ${qualityGate.status}")
+                            }
                         }
                     }
                 }
             }
         }
+
 
         // ==========================================
         // BACKUP
