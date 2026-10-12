@@ -68,9 +68,9 @@ pipeline {
         // ==========================================
 
         stage('SonarQube Analysis') {
-            steps {
-                script {
-                    def services = [
+    steps {
+        script {
+            def services = [
                 'api-gateway',
                 'discovery-service',
                 'media-service',
@@ -79,45 +79,47 @@ pipeline {
                 'user-service'
             ]
 
+            services.each { service ->
+                dir("backend/${service}") {
                     withSonarQubeEnv('SonarQube') {
-                        // Analyze each backend service
-                        services.each { service ->
-                            dir("backend/${service}") {
-                                sh """
+                        sh """
                             ./mvnw clean verify \
                               org.sonarsource.scanner.maven:sonar-maven-plugin:sonar \
                               -Dsonar.projectKey=buy-01-${service}
                         """
-                            }
+                    }
+                }
 
-                            timeout(time: 5, unit: 'MINUTES') {
-                                def qualityGate = waitForQualityGate()
-                                if (qualityGate.status != 'OK') {
-                                    error("Quality Gate failed for ${service}: ${qualityGate.status}")
-                                }
-                            }
-                        }
+                // OUTSIDE withSonarQubeEnv
+                timeout(time: 5, unit: 'MINUTES') {
+                    def qg = waitForQualityGate()
+                    if (qg.status != 'OK') {
+                        error("Quality Gate failed for ${service}: ${qg.status}")
+                    }
+                }
+            }
 
-                        // Analyze Angular frontend
-                        dir('frontend') {
-                            sh '''
+            // Frontend
+            dir('frontend') {
+                withSonarQubeEnv('SonarQube') {
+                    sh '''
                         npx sonar-scanner \
                           -Dsonar.projectKey=buy-01-frontend \
                           -Dsonar.sources=src \
                           -Dsonar.exclusions=**/node_modules/**,**/dist/**
                     '''
-                        }
+                }
+            }
 
-                        timeout(time: 5, unit: 'MINUTES') {
-                            def qualityGate = waitForQualityGate()
-                            if (qualityGate.status != 'OK') {
-                                error("Quality Gate failed for frontend: ${qualityGate.status}")
-                            }
-                        }
-                    }
+            timeout(time: 5, unit: 'MINUTES') {
+                def qg = waitForQualityGate()
+                if (qg.status != 'OK') {
+                    error("Quality Gate failed for frontend: ${qg.status}")
                 }
             }
         }
+    }
+}
 
 
         // ==========================================
