@@ -67,24 +67,24 @@ pipeline {
         // SonarQube Analysis
         // ==========================================
 
-        stage('SonarQube Analysis') {
-    steps {
-        script {
-            def services = [
-                'api-gateway',
-                'discovery-service',
-                'media-service',
-                'product-service',
-                'security-service',
-                'user-service'
-            ]
+         stage('SonarQube Analysis') {
+
+                 steps {
+                     script {
+                          def services = [
+                                 'api-gateway',
+                                 'discovery-service',
+                                 'media-service',
+                                 'product-service',
+                                 'security-service',
+                                 'user-service'
+                         ]
 
             services.each { service ->
                 dir("backend/${service}") {
                     withSonarQubeEnv('SonarQube') {
                         sh """
-                            ./mvnw clean verify \
-                              org.sonarsource.scanner.maven:sonar-maven-plugin:sonar \
+                            ./mvnw org.sonarsource.scanner.maven:sonar-maven-plugin:sonar \
                               -Dsonar.projectKey=buy-01-${service}
                         """
                     }
