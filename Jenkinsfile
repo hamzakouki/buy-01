@@ -63,6 +63,25 @@ pipeline {
                 }
             }
         }
+
+        // ==========================================
+        // FRONTEND
+        // ==========================================
+
+        stage('Frontend Tests & Build') {
+            steps {
+                dir('frontend') {
+                    sh 'npm ci'
+
+                    sh 'npm test -- --watch=false --code-coverage'
+
+                    sh 'npm run build'
+                }
+            }
+        }
+
+
+
         // ==========================================
         // SonarQube Analysis
         // ==========================================
@@ -106,7 +125,8 @@ pipeline {
                         npx sonar-scanner \
                           -Dsonar.projectKey=buy-01-frontend \
                           -Dsonar.sources=src \
-                          -Dsonar.exclusions=**/node_modules/**,**/dist/**
+                          -Dsonar.exclusions=**/node_modules/**,**/dist/**,**/*.spec.ts \
+                          -Dsonar.javascript.lcov.reportPaths=coverage/lcov.info
                     '''
                 }
             }
@@ -136,21 +156,6 @@ pipeline {
             }
         }
 
-        // ==========================================
-        // FRONTEND
-        // ==========================================
-
-        stage('Frontend Tests & Build') {
-            steps {
-                dir('frontend') {
-                    sh 'npm ci'
-
-                    sh 'npm test -- --watch=false'
-
-                    sh 'npm run build'
-                }
-            }
-        }
 
         // ==========================================
         // DOCKER BUILD
