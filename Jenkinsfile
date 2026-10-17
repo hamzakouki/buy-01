@@ -73,7 +73,7 @@ pipeline {
                 dir('frontend') {
                     sh 'npm ci'
 
-                    sh 'npm test -- --watch=false --coverage'
+                    sh 'npm test -- --watch=false'
 
                     sh 'npm run build'
                 }
