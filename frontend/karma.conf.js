@@ -8,9 +8,15 @@ module.exports = function (config) {
       'karma-jasmine',
       'karma-chrome-launcher',
       'karma-jasmine-html-reporter',
-      'karma-junit-reporter'
-      
+      'karma-junit-reporter',
+      'karma-coverage'
     ],
+
+    coverageReporter: {
+      dir: require('path').join(__dirname, 'coverage'),
+      subdir: '.',
+      reporters:[{ type: 'lcovonly'}]
+    },
 
     customLaunchers: {
       ChromeHeadlessNoSandbox: {

@@ -65,20 +65,6 @@ pipeline {
         }
 
         // ==========================================
-        // BACKUP
-        // ==========================================
-
-        stage('Backup') {
-            when {
-                branch 'main'
-            }
-
-            steps {
-                sh './scripts/backup.sh'
-            }
-        }
-
-        // ==========================================
         // FRONTEND
         // ==========================================
 
@@ -93,6 +79,83 @@ pipeline {
                 }
             }
         }
+
+
+
+        // ==========================================
+        // SonarQube Analysis
+        // ==========================================
+
+         stage('SonarQube Analysis') {
+
+                 steps {
+                     script {
+                          def services = [
+                                 'api-gateway',
+                                 'discovery-service',
+                                 'media-service',
+                                 'product-service',
+                                 'security-service',
+                                 'user-service'
+                         ]
+
+            services.each { service ->
+                dir("backend/${service}") {
+                    withSonarQubeEnv('SonarQube') {
+                        sh """
+                            ./mvnw org.sonarsource.scanner.maven:sonar-maven-plugin:sonar \
+                              -Dsonar.projectKey=buy-01-${service}
+                        """
+                    }
+                }
+
+                // OUTSIDE withSonarQubeEnv
+                timeout(time: 5, unit: 'MINUTES') {
+                    def qg = waitForQualityGate()
+                    if (qg.status != 'OK') {
+                        error("Quality Gate failed for ${service}: ${qg.status}")
+                    }
+                }
+            }
+
+            // Frontend
+            dir('frontend') {
+                withSonarQubeEnv('SonarQube') {
+                    sh '''
+                        npx sonar-scanner \
+                          -Dsonar.projectKey=buy-01-frontend \
+                          -Dsonar.sources=src \
+                          -Dsonar.exclusions=**/node_modules/**,**/dist/**,**/*.spec.ts \
+                          -Dsonar.javascript.lcov.reportPaths=coverage/lcov.info
+                    '''
+                }
+            }
+
+            timeout(time: 5, unit: 'MINUTES') {
+                def qg = waitForQualityGate()
+                if (qg.status != 'OK') {
+                    error("Quality Gate failed for frontend: ${qg.status}")
+                }
+            }
+        }
+    }
+}
+
+
+        // ==========================================
+        // BACKUP
+        // ==========================================
+
+        stage('Backup') {
+            when {
+                branch 'main'
+            }
+
+            steps {
+                sh './scripts/backup.sh'
+            }
+        }
+
 
         // ==========================================
         // DOCKER BUILD

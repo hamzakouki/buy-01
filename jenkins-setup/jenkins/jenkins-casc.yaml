@@ -50,6 +50,12 @@ credentials:
               id: "cloudinary-url"
               secret: "${CLOUDINARY_URL}"
               description: "URL Cloudinary pour media-service"
+          
+          - string:
+              scope: GLOBAL
+              id: "sonarqube-token"
+              secret: "${SONAR_TOKEN}"
+              description: "SonarQube authentication token"
 
           - file:
               scope: GLOBAL
@@ -66,7 +72,6 @@ credentials:
               description: "Clé publique JWT (RS256)"
 
 unclassified:
-
   location:
     url: "http://localhost:8080/"
     adminAddress: "${GMAIL_USERNAME}"

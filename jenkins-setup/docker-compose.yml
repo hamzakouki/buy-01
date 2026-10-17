@@ -43,6 +43,7 @@ services:
       JENKINS_ADMIN_PASSWORD: ${JENKINS_ADMIN_PASSWORD}
       JWT_PRIVATE_KEY_B64: ${JWT_PRIVATE_KEY_B64}
       JWT_PUBLIC_KEY_B64: ${JWT_PUBLIC_KEY_B64}
+      SONAR_TOKEN: ${SONAR_TOKEN}
     ports:
       - "8080:8080"
       - "4200:4200"
@@ -55,6 +56,21 @@ services:
       - jenkins-docker
     restart: on-failure
 
+
+  sonarqube:
+    image: sonarqube:26.9.0.129388-community
+    container_name: sonarqube
+    networks:
+      - jenkins
+    ports:
+      - "9000:9000"
+    volumes:
+      - sonarqube-data:/opt/sonarqube/data
+      - sonarqube-extensions:/opt/sonarqube/extensions
+      - sonarqube-logs:/opt/sonarqube/logs
+    restart: unless-stopped
+
+
 networks:
   jenkins:
     name: jenkins
@@ -65,3 +81,12 @@ volumes:
     name: jenkins-data
   jenkins-docker-certs:
     name: jenkins-docker-certs  
+
+  sonarqube-data:
+    name: sonarqube-data
+
+  sonarqube-extensions:
+    name: sonarqube-extensions
+
+  sonarqube-logs:
+    name: sonarqube-logs
