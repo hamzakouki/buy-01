@@ -1,344 +1,344 @@
 <?xml version="1.0"?>
-<testsuite name="Chrome Headless 153.0.0.0 (Linux 0.0.0)" package="" timestamp="2026-09-19T10:39:00" id="0" hostname="talentMachine" tests="323" errors="0" failures="0" time="0.681">
+<testsuite name="Chrome Headless 155.0.0.0 (Linux 0.0.0)" package="" timestamp="2026-10-17T13:58:55" id="0" hostname="talentMachine" tests="323" errors="0" failures="0" time="0.7">
   <properties>
-    <property name="browser.fullName" value="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36"/>
+    <property name="browser.fullName" value="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.0.0 Safari/537.36"/>
   </properties>
-  <testcase name="authGuard should not create a login UrlTree when the user is authenticated" time="0.008" classname="authGuard"/>
-  <testcase name="authGuard should be created" time="0.001" classname="authGuard"/>
-  <testcase name="authGuard should redirect to login when the user is not authenticated" time="0.002" classname="authGuard"/>
-  <testcase name="authGuard should return true when the user is authenticated" time="0.001" classname="authGuard"/>
+  <testcase name="authInterceptor should be created" time="0.008" classname="authInterceptor"/>
+  <testcase name="authInterceptor should preserve the original request URL when retrying after refresh" time="0.004" classname="authInterceptor"/>
+  <testcase name="authInterceptor should pass auth requests through without adding an authorization header" time="0.002" classname="authInterceptor"/>
+  <testcase name="authInterceptor should refresh the token when the request returns 401" time="0.002" classname="authInterceptor"/>
+  <testcase name="authInterceptor should add the access token to the authorization header" time="0.002" classname="authInterceptor"/>
+  <testcase name="authInterceptor should preserve the original request method when retrying after refresh" time="0.002" classname="authInterceptor"/>
+  <testcase name="authInterceptor should propagate non-401 errors without refreshing the token" time="0.002" classname="authInterceptor"/>
+  <testcase name="authInterceptor should pass the request through when there is no access token" time="0.001" classname="authInterceptor"/>
+  <testcase name="authInterceptor should retry the original request only with the fresh token" time="0.002" classname="authInterceptor"/>
+  <testcase name="authInterceptor should not refresh the token when the original request has no access token" time="0.001" classname="authInterceptor"/>
+  <testcase name="authInterceptor should propagate the original 401 error when token refresh fails" time="0.001" classname="authInterceptor"/>
+  <testcase name="authGuard should be created" time="0" classname="authGuard"/>
   <testcase name="authGuard should create a login UrlTree when the user is not authenticated" time="0.001" classname="authGuard"/>
-  <testcase name="NotificationError should have null message initially" time="0.001" classname="NotificationError"/>
-  <testcase name="NotificationError should have green color initially" time="0" classname="NotificationError"/>
-  <testcase name="NotificationError should be created" time="0.001" classname="NotificationError"/>
-  <testcase name="NotificationError getMessage should return the current message" time="0.001" classname="NotificationError getMessage"/>
-  <testcase name="NotificationError getColor should return the current color" time="0.001" classname="NotificationError getColor"/>
-  <testcase name="NotificationError show should use green as the default color" time="0.001" classname="NotificationError show"/>
-  <testcase name="NotificationError show should allow green to be explicitly specified" time="0.001" classname="NotificationError show"/>
-  <testcase name="NotificationError show should set the specified color" time="0" classname="NotificationError show"/>
-  <testcase name="NotificationError show should set the message" time="0.001" classname="NotificationError show"/>
-  <testcase name="NotificationError show should replace the previous color" time="0.001" classname="NotificationError show"/>
-  <testcase name="NotificationError show should replace the previous message" time="0" classname="NotificationError show"/>
-  <testcase name="Register should reject a username containing special characters" time="0.018" classname="Register"/>
-  <testcase name="Register should reject a password shorter than 6 characters" time="0.003" classname="Register"/>
-  <testcase name="Register should show a success notification after successful registration" time="0.004" classname="Register"/>
-  <testcase name="Register should reject a username containing spaces" time="0.003" classname="Register"/>
-  <testcase name="Register should reject a username shorter than 3 characters" time="0.004" classname="Register"/>
-  <testcase name="Register should initialize the form with CLIENT as the default role" time="0.002" classname="Register"/>
-  <testcase name="Register should accept a username containing letters, numbers and underscore" time="0.002" classname="Register"/>
-  <testcase name="Register should be created" time="0.002" classname="Register"/>
-  <testcase name="Register should not navigate when registration fails" time="0.002" classname="Register"/>
-  <testcase name="Register should call AuthService.register with the correct request" time="0.003" classname="Register"/>
-  <testcase name="Register should accept a username with exactly 20 characters" time="0.003" classname="Register"/>
-  <testcase name="Register should accept a username with exactly 3 characters" time="0.002" classname="Register"/>
-  <testcase name="Register should require a password" time="0.002" classname="Register"/>
+  <testcase name="authGuard should not create a login UrlTree when the user is authenticated" time="0" classname="authGuard"/>
+  <testcase name="authGuard should redirect to login when the user is not authenticated" time="0.002" classname="authGuard"/>
+  <testcase name="authGuard should return true when the user is authenticated" time="0" classname="authGuard"/>
+  <testcase name="TokenService isSeller should return false when the user does not have ROLE_SELLER" time="0.001" classname="TokenService isSeller"/>
+  <testcase name="TokenService isSeller should return false when there are no roles" time="0.001" classname="TokenService isSeller"/>
+  <testcase name="TokenService isSeller should return true when the user has ROLE_SELLER" time="0.001" classname="TokenService isSeller"/>
+  <testcase name="TokenService getRoles should split roles separated by spaces" time="0.001" classname="TokenService getRoles"/>
+  <testcase name="TokenService getRoles should return an empty array when the token is invalid" time="0.001" classname="TokenService getRoles"/>
+  <testcase name="TokenService getRoles should return an empty array when scope is not a string" time="0.001" classname="TokenService getRoles"/>
+  <testcase name="TokenService getRoles should ignore extra spaces between roles" time="0" classname="TokenService getRoles"/>
+  <testcase name="TokenService getRoles should return an empty array when there is no access token" time="0.001" classname="TokenService getRoles"/>
+  <testcase name="TokenService getRoles should return an empty array when scope is missing" time="0.001" classname="TokenService getRoles"/>
+  <testcase name="TokenService getRoles should return roles from the scope claim" time="0.001" classname="TokenService getRoles"/>
+  <testcase name="TokenService should be created" time="0" classname="TokenService"/>
+  <testcase name="TokenService setTokens should store the refresh token" time="0.001" classname="TokenService setTokens"/>
+  <testcase name="TokenService setTokens should store the access token" time="0.001" classname="TokenService setTokens"/>
+  <testcase name="TokenService setTokens should replace existing tokens" time="0" classname="TokenService setTokens"/>
+  <testcase name="TokenService setTokens should store both tokens" time="0" classname="TokenService setTokens"/>
+  <testcase name="TokenService getAccessToken should return null when no access token exists" time="0" classname="TokenService getAccessToken"/>
+  <testcase name="TokenService getAccessToken should return the stored access token" time="0.001" classname="TokenService getAccessToken"/>
+  <testcase name="TokenService getUserId should return the user id from the JWT payload" time="0.001" classname="TokenService getUserId"/>
+  <testcase name="TokenService getUserId should return null when the JWT payload is invalid" time="0.001" classname="TokenService getUserId"/>
+  <testcase name="TokenService getUserId should return null when the sub claim is not a string" time="0" classname="TokenService getUserId"/>
+  <testcase name="TokenService getUserId should return null when the token does not contain three segments" time="0.001" classname="TokenService getUserId"/>
+  <testcase name="TokenService getUserId should return null when the sub claim is missing" time="0" classname="TokenService getUserId"/>
+  <testcase name="TokenService getUserId should return null when there is no access token" time="0.001" classname="TokenService getUserId"/>
+  <testcase name="TokenService isAuthenticated should return true when an access token exists" time="0.001" classname="TokenService isAuthenticated"/>
+  <testcase name="TokenService isAuthenticated should return true when the access token is an empty string" time="0.001" classname="TokenService isAuthenticated"/>
+  <testcase name="TokenService isAuthenticated should return false when no access token exists" time="0.001" classname="TokenService isAuthenticated"/>
+  <testcase name="TokenService clearTokens should remove the refresh token" time="0.001" classname="TokenService clearTokens"/>
+  <testcase name="TokenService clearTokens should remove the access token" time="0" classname="TokenService clearTokens"/>
+  <testcase name="TokenService clearTokens should remove both tokens" time="0" classname="TokenService clearTokens"/>
+  <testcase name="TokenService getRefreshToken should return null when no refresh token exists" time="0" classname="TokenService getRefreshToken"/>
+  <testcase name="TokenService getRefreshToken should return the stored refresh token" time="0" classname="TokenService getRefreshToken"/>
+  <testcase name="UserService getProfile should return the user profile" time="0.001" classname="UserService getProfile"/>
+  <testcase name="UserService getProfile should send a GET request to the profile endpoint" time="0.001" classname="UserService getProfile"/>
+  <testcase name="UserService getProfile should return a profile with an avatar" time="0.001" classname="UserService getProfile"/>
+  <testcase name="UserService getProfile should handle profile retrieval errors" time="0.001" classname="UserService getProfile"/>
+  <testcase name="UserService updateProfile should send a PUT request to the profile endpoint" time="0.001" classname="UserService updateProfile"/>
+  <testcase name="UserService updateProfile should handle profile update errors" time="0.001" classname="UserService updateProfile"/>
+  <testcase name="UserService updateProfile should return the updated user profile" time="0" classname="UserService updateProfile"/>
+  <testcase name="UserService updateProfile should allow SELLER as a valid role" time="0.001" classname="UserService updateProfile"/>
+  <testcase name="UserService should be created" time="0.001" classname="UserService"/>
+  <testcase name="Profile should show the authentication error notification on 401" time="0.023" classname="Profile"/>
+  <testcase name="Profile should show the generic save error for other errors" time="0.004" classname="Profile"/>
+  <testcase name="Profile should set the avatar URL from the profile" time="0.003" classname="Profile"/>
+  <testcase name="Profile should initialize savedMessage as empty" time="0.005" classname="Profile"/>
+  <testcase name="Profile should stop saving after an update error" time="0.004" classname="Profile"/>
+  <testcase name="Profile should set a generic error for non-401 loading errors" time="0.004" classname="Profile"/>
+  <testcase name="Profile should do nothing when no file is selected" time="0.004" classname="Profile"/>
+  <testcase name="Profile should stop loading after a profile loading error" time="0.005" classname="Profile"/>
+  <testcase name="Profile should set avatarUrl to null when the avatar is empty" time="0.003" classname="Profile"/>
+  <testcase name="Profile should show an error when the user ID cannot be found" time="0.005" classname="Profile"/>
+  <testcase name="Profile should clear the previous load error when loading the profile" time="0.005" classname="Profile"/>
+  <testcase name="Profile should return false when the user is a CLIENT" time="0.005" classname="Profile"/>
+  <testcase name="Profile should apply the updated profile after a successful save" time="0.002" classname="Profile"/>
+  <testcase name="Profile should revoke the previous preview when selecting another file" time="0.003" classname="Profile"/>
+  <testcase name="Profile should load the profile when the component is created" time="0.002" classname="Profile"/>
+  <testcase name="Profile should set loading to true while loading the profile" time="0.004" classname="Profile"/>
+  <testcase name="Profile should navigate to login when loading returns 401" time="0.002" classname="Profile"/>
+  <testcase name="Profile should reject an invalid email" time="0.003" classname="Profile"/>
+  <testcase name="Profile should set the success message after updating" time="0.002" classname="Profile"/>
+  <testcase name="Profile should require the email" time="0.002" classname="Profile"/>
+  <testcase name="Profile should not upload when there is no pending file" time="0.002" classname="Profile"/>
+  <testcase name="Profile should apply the email from the loaded profile" time="0.003" classname="Profile"/>
+  <testcase name="Profile should stop saving after a successful update" time="0.003" classname="Profile"/>
+  <testcase name="Profile should store the loaded profile" time="0.01" classname="Profile"/>
+  <testcase name="Profile should reset uploading when removing the image" time="0.005" classname="Profile"/>
+  <testcase name="Profile should mark the form controls as touched when submit is invalid" time="0.003" classname="Profile"/>
+  <testcase name="Profile should apply the username from the loaded profile" time="0.002" classname="Profile"/>
+  <testcase name="Profile should accept an image exactly 1 MB in size" time="0.003" classname="Profile"/>
+  <testcase name="Profile should show the conflict message for a 409 error" time="0.003" classname="Profile"/>
+  <testcase name="Profile should show the generic upload error for other errors" time="0.003" classname="Profile"/>
+  <testcase name="Profile should initialize saving as false" time="0.002" classname="Profile"/>
+  <testcase name="Profile should upload the avatar using the user ID" time="0.002" classname="Profile"/>
+  <testcase name="Profile should allow a username with 3 characters" time="0.002" classname="Profile"/>
+  <testcase name="Profile should accept a valid email" time="0.002" classname="Profile"/>
+  <testcase name="Profile should show a success notification after avatar upload" time="0.003" classname="Profile"/>
+  <testcase name="Profile should initialize uploading as false" time="0.003" classname="Profile"/>
+  <testcase name="Profile should update avatarUrl after successful upload" time="0.002" classname="Profile"/>
+  <testcase name="Profile should set uploading to true while uploading" time="0.003" classname="Profile"/>
+  <testcase name="Profile should not update the profile when there is no current profile" time="0.002" classname="Profile"/>
+  <testcase name="Profile should be created" time="0.001" classname="Profile"/>
+  <testcase name="Profile should stop loading after the profile is loaded" time="0.002" classname="Profile"/>
+  <testcase name="Profile should set saving to true while updating" time="0.003" classname="Profile"/>
+  <testcase name="Profile should not update the profile when the form is invalid" time="0.003" classname="Profile"/>
+  <testcase name="Profile should clear the pending file name after successful upload" time="0.002" classname="Profile"/>
+  <testcase name="Profile should clear the pending file name when removing the image" time="0.002" classname="Profile"/>
+  <testcase name="Profile should not upload while another upload is running" time="0.002" classname="Profile"/>
+  <testcase name="Profile should reject usernames containing invalid characters" time="0.002" classname="Profile"/>
+  <testcase name="Profile should initialize saveError as empty" time="0.001" classname="Profile"/>
+  <testcase name="Profile should update the profile with the form values" time="0.002" classname="Profile"/>
+  <testcase name="Profile should initialize pendingFileName as empty" time="0.002" classname="Profile"/>
+  <testcase name="Profile should clear previous save errors when submitting" time="0.002" classname="Profile"/>
+  <testcase name="Profile should clear the pending preview when removing the image" time="0.002" classname="Profile"/>
+  <testcase name="Profile should return true when the user is a SELLER" time="0.002" classname="Profile"/>
+  <testcase name="Profile should stop uploading after a successful avatar upload" time="0.002" classname="Profile"/>
+  <testcase name="Profile should reject usernames longer than 20 characters" time="0.002" classname="Profile"/>
+  <testcase name="Profile should initialize pendingPreviewUrl as null" time="0.003" classname="Profile"/>
+  <testcase name="Profile should show the authorization error when avatar upload returns 403" time="0.002" classname="Profile"/>
+  <testcase name="Profile should return false when there is no profile" time="0.002" classname="Profile"/>
+  <testcase name="Profile should initialize loadError as empty" time="0.002" classname="Profile"/>
+  <testcase name="Profile should clear the pending preview after successful upload" time="0.008" classname="Profile"/>
+  <testcase name="Profile should require the username" time="0.003" classname="Profile"/>
+  <testcase name="Profile should preserve the existing role when updating the profile" time="0.002" classname="Profile"/>
+  <testcase name="Profile should accept usernames containing letters, numbers and underscores" time="0.003" classname="Profile"/>
+  <testcase name="Profile should stop uploading after an upload error" time="0.003" classname="Profile"/>
+  <testcase name="Profile should set avatarUrl to null when the profile has no avatar" time="0.004" classname="Profile"/>
+  <testcase name="Profile should require username to have at least 3 characters" time="0.003" classname="Profile"/>
+  <testcase name="Profile should accept a valid image file" time="0.003" classname="Profile"/>
+  <testcase name="Profile should clear the pending file when removing the image" time="0.003" classname="Profile"/>
+  <testcase name="Profile should reject a non-image file" time="0.004" classname="Profile"/>
+  <testcase name="Profile should revoke the pending preview when the component is destroyed" time="0.003" classname="Profile"/>
+  <testcase name="Profile should reject an image larger than 1 MB" time="0.003" classname="Profile"/>
+  <testcase name="TokenRefreshService refresh should set authenticated after successful refresh" time="0.002" classname="TokenRefreshService refresh"/>
+  <testcase name="TokenRefreshService refresh should get the refresh token only when there is no in-flight request" time="0" classname="TokenRefreshService refresh"/>
+  <testcase name="TokenRefreshService refresh should logout and return an error when no refresh token is stored" time="0.001" classname="TokenRefreshService refresh"/>
+  <testcase name="TokenRefreshService refresh should not set authenticated when refresh fails" time="0.001" classname="TokenRefreshService refresh"/>
+  <testcase name="TokenRefreshService refresh should refresh the tokens successfully" time="0" classname="TokenRefreshService refresh"/>
+  <testcase name="TokenRefreshService refresh should clear the in-flight request after a successful refresh" time="0" classname="TokenRefreshService refresh"/>
+  <testcase name="TokenRefreshService refresh should not save tokens when the refresh request fails" time="0.001" classname="TokenRefreshService refresh"/>
+  <testcase name="TokenRefreshService refresh should share the refresh result with multiple subscribers" time="0.001" classname="TokenRefreshService refresh"/>
+  <testcase name="TokenRefreshService refresh should logout when the refresh request fails" time="0.001" classname="TokenRefreshService refresh"/>
+  <testcase name="TokenRefreshService refresh should return the same in-flight observable while a refresh is running" time="0.001" classname="TokenRefreshService refresh"/>
+  <testcase name="TokenRefreshService refresh should clear the in-flight request after a failed refresh" time="0.001" classname="TokenRefreshService refresh"/>
+  <testcase name="TokenRefreshService should be created" time="0.001" classname="TokenRefreshService"/>
+  <testcase name="Register should accept SELLER as a role" time="0.003" classname="Register"/>
+  <testcase name="Register should call AuthService.register with the correct request" time="0.002" classname="Register"/>
+  <testcase name="Register should mark all controls as touched when the form is invalid" time="0.002" classname="Register"/>
   <testcase name="Register should not call AuthService.register when the form is invalid" time="0.002" classname="Register"/>
-  <testcase name="Register should reject a username longer than 20 characters" time="0.002" classname="Register"/>
+  <testcase name="Register should navigate to the login page after successful registration" time="0.002" classname="Register"/>
+  <testcase name="Register should accept a username with exactly 20 characters" time="0.002" classname="Register"/>
+  <testcase name="Register should reject a username containing spaces" time="0.003" classname="Register"/>
+  <testcase name="Register should show a success notification after successful registration" time="0.001" classname="Register"/>
+  <testcase name="Register should reject a username longer than 20 characters" time="0.001" classname="Register"/>
+  <testcase name="Register should show the backend error message when registration fails" time="0.002" classname="Register"/>
+  <testcase name="Register should reject a username containing special characters" time="0.002" classname="Register"/>
+  <testcase name="Register should register a SELLER correctly" time="0.001" classname="Register"/>
   <testcase name="Register should reject an invalid email" time="0.002" classname="Register"/>
   <testcase name="Register should require a username" time="0.002" classname="Register"/>
   <testcase name="Register should accept a valid email" time="0.002" classname="Register"/>
-  <testcase name="Register should register a SELLER correctly" time="0.002" classname="Register"/>
-  <testcase name="Register should have an invalid form initially" time="0.001" classname="Register"/>
-  <testcase name="Register should accept CLIENT as a role" time="0.002" classname="Register"/>
-  <testcase name="Register should navigate to the login page after successful registration" time="0.002" classname="Register"/>
+  <testcase name="Register should not navigate when registration fails" time="0.002" classname="Register"/>
+  <testcase name="Register should accept a username containing letters, numbers and underscore" time="0.001" classname="Register"/>
+  <testcase name="Register should accept a username with exactly 3 characters" time="0.002" classname="Register"/>
   <testcase name="Register should require an email" time="0.002" classname="Register"/>
-  <testcase name="Register should mark all controls as touched when the form is invalid" time="0.007" classname="Register"/>
-  <testcase name="Register should accept a password with exactly 6 characters" time="0.002" classname="Register"/>
-  <testcase name="Register should show the backend error message when registration fails" time="0.001" classname="Register"/>
+  <testcase name="Register should reject a username shorter than 3 characters" time="0.003" classname="Register"/>
+  <testcase name="Register should accept a password with exactly 6 characters" time="0.005" classname="Register"/>
+  <testcase name="Register should accept CLIENT as a role" time="0.003" classname="Register"/>
+  <testcase name="Register should have an invalid form initially" time="0.001" classname="Register"/>
+  <testcase name="Register should be created" time="0.002" classname="Register"/>
+  <testcase name="Register should require a password" time="0.002" classname="Register"/>
+  <testcase name="Register should initialize the form with CLIENT as the default role" time="0.001" classname="Register"/>
+  <testcase name="Register should reject a password shorter than 6 characters" time="0.001" classname="Register"/>
   <testcase name="Register should require a role" time="0.002" classname="Register"/>
-  <testcase name="Register should accept SELLER as a role" time="0.001" classname="Register"/>
-  <testcase name="TokenRefreshService should be created" time="0" classname="TokenRefreshService"/>
-  <testcase name="TokenRefreshService refresh should share the refresh result with multiple subscribers" time="0.002" classname="TokenRefreshService refresh"/>
-  <testcase name="TokenRefreshService refresh should return the same in-flight observable while a refresh is running" time="0.001" classname="TokenRefreshService refresh"/>
-  <testcase name="TokenRefreshService refresh should clear the in-flight request after a failed refresh" time="0.001" classname="TokenRefreshService refresh"/>
-  <testcase name="TokenRefreshService refresh should clear the in-flight request after a successful refresh" time="0" classname="TokenRefreshService refresh"/>
-  <testcase name="TokenRefreshService refresh should not save tokens when the refresh request fails" time="0" classname="TokenRefreshService refresh"/>
-  <testcase name="TokenRefreshService refresh should logout when the refresh request fails" time="0.001" classname="TokenRefreshService refresh"/>
-  <testcase name="TokenRefreshService refresh should logout and return an error when no refresh token is stored" time="0" classname="TokenRefreshService refresh"/>
-  <testcase name="TokenRefreshService refresh should refresh the tokens successfully" time="0.001" classname="TokenRefreshService refresh"/>
-  <testcase name="TokenRefreshService refresh should get the refresh token only when there is no in-flight request" time="0.001" classname="TokenRefreshService refresh"/>
-  <testcase name="TokenRefreshService refresh should not set authenticated when refresh fails" time="0" classname="TokenRefreshService refresh"/>
-  <testcase name="TokenRefreshService refresh should set authenticated after successful refresh" time="0.001" classname="TokenRefreshService refresh"/>
-  <testcase name="Profile should clear the pending file name after successful upload" time="0.003" classname="Profile"/>
-  <testcase name="Profile should stop uploading after a successful avatar upload" time="0.002" classname="Profile"/>
-  <testcase name="Profile should reject usernames containing invalid characters" time="0.002" classname="Profile"/>
-  <testcase name="Profile should clear the pending preview after successful upload" time="0.003" classname="Profile"/>
-  <testcase name="Profile should reject usernames longer than 20 characters" time="0.002" classname="Profile"/>
-  <testcase name="Profile should stop saving after an update error" time="0.005" classname="Profile"/>
-  <testcase name="Profile should show the authorization error when avatar upload returns 403" time="0.003" classname="Profile"/>
-  <testcase name="Profile should stop loading after a profile loading error" time="0.002" classname="Profile"/>
-  <testcase name="Profile should clear the pending preview when removing the image" time="0.002" classname="Profile"/>
-  <testcase name="Profile should show the generic save error for other errors" time="0.003" classname="Profile"/>
-  <testcase name="Profile should initialize saveError as empty" time="0.002" classname="Profile"/>
-  <testcase name="Profile should accept a valid image file" time="0.002" classname="Profile"/>
-  <testcase name="Profile should stop uploading after an upload error" time="0.002" classname="Profile"/>
-  <testcase name="Profile should return false when the user is a CLIENT" time="0.002" classname="Profile"/>
-  <testcase name="Profile should initialize savedMessage as empty" time="0.002" classname="Profile"/>
-  <testcase name="Profile should accept a valid email" time="0.003" classname="Profile"/>
-  <testcase name="Profile should reject an image larger than 1 MB" time="0.002" classname="Profile"/>
-  <testcase name="Profile should not upload while another upload is running" time="0.002" classname="Profile"/>
-  <testcase name="Profile should show a success notification after avatar upload" time="0.002" classname="Profile"/>
-  <testcase name="Profile should return true when the user is a SELLER" time="0.002" classname="Profile"/>
-  <testcase name="Profile should do nothing when no file is selected" time="0.001" classname="Profile"/>
-  <testcase name="Profile should initialize loadError as empty" time="0.002" classname="Profile"/>
-  <testcase name="Profile should reject an invalid email" time="0.002" classname="Profile"/>
-  <testcase name="Profile should show the generic upload error for other errors" time="0.003" classname="Profile"/>
-  <testcase name="Profile should return false when there is no profile" time="0.002" classname="Profile"/>
-  <testcase name="Profile should require username to have at least 3 characters" time="0.002" classname="Profile"/>
-  <testcase name="Profile should revoke the previous preview when selecting another file" time="0.002" classname="Profile"/>
-  <testcase name="Profile should require the email" time="0.002" classname="Profile"/>
-  <testcase name="Profile should require the username" time="0.007" classname="Profile"/>
-  <testcase name="Profile should allow a username with 3 characters" time="0.002" classname="Profile"/>
-  <testcase name="Profile should reject a non-image file" time="0.002" classname="Profile"/>
-  <testcase name="Profile should accept usernames containing letters, numbers and underscores" time="0.001" classname="Profile"/>
-  <testcase name="Profile should show an error when the user ID cannot be found" time="0.001" classname="Profile"/>
-  <testcase name="Profile should accept an image exactly 1 MB in size" time="0.001" classname="Profile"/>
-  <testcase name="Profile should clear the pending file name when removing the image" time="0.002" classname="Profile"/>
-  <testcase name="Profile should not upload when there is no pending file" time="0.002" classname="Profile"/>
-  <testcase name="Profile should update the profile with the form values" time="0.002" classname="Profile"/>
-  <testcase name="Profile should clear the previous load error when loading the profile" time="0.002" classname="Profile"/>
-  <testcase name="Profile should clear the pending file when removing the image" time="0.002" classname="Profile"/>
-  <testcase name="Profile should not update the profile when the form is invalid" time="0.002" classname="Profile"/>
-  <testcase name="Profile should upload the avatar using the user ID" time="0.002" classname="Profile"/>
-  <testcase name="Profile should mark the form controls as touched when submit is invalid" time="0.001" classname="Profile"/>
-  <testcase name="Profile should reset uploading when removing the image" time="0.002" classname="Profile"/>
-  <testcase name="Profile should set the avatar URL from the profile" time="0.003" classname="Profile"/>
-  <testcase name="Profile should not update the profile when there is no current profile" time="0.005" classname="Profile"/>
-  <testcase name="Profile should update avatarUrl after successful upload" time="0.003" classname="Profile"/>
-  <testcase name="Profile should initialize pendingPreviewUrl as null" time="0.003" classname="Profile"/>
-  <testcase name="Profile should revoke the pending preview when the component is destroyed" time="0.003" classname="Profile"/>
-  <testcase name="Profile should apply the username from the loaded profile" time="0.002" classname="Profile"/>
-  <testcase name="Profile should preserve the existing role when updating the profile" time="0.002" classname="Profile"/>
-  <testcase name="Profile should initialize saving as false" time="0.003" classname="Profile"/>
-  <testcase name="Profile should clear previous save errors when submitting" time="0.005" classname="Profile"/>
-  <testcase name="Profile should initialize pendingFileName as empty" time="0.004" classname="Profile"/>
-  <testcase name="Profile should set the success message after updating" time="0.003" classname="Profile"/>
-  <testcase name="Profile should set avatarUrl to null when the avatar is empty" time="0.004" classname="Profile"/>
-  <testcase name="Profile should set uploading to true while uploading" time="0.004" classname="Profile"/>
-  <testcase name="Profile should store the loaded profile" time="0.002" classname="Profile"/>
-  <testcase name="Profile should be created" time="0.002" classname="Profile"/>
-  <testcase name="Profile should set saving to true while updating" time="0.004" classname="Profile"/>
-  <testcase name="Profile should navigate to login when loading returns 401" time="0.003" classname="Profile"/>
-  <testcase name="Profile should set avatarUrl to null when the profile has no avatar" time="0.004" classname="Profile"/>
-  <testcase name="Profile should apply the email from the loaded profile" time="0.003" classname="Profile"/>
-  <testcase name="Profile should stop loading after the profile is loaded" time="0.002" classname="Profile"/>
-  <testcase name="Profile should load the profile when the component is created" time="0.003" classname="Profile"/>
-  <testcase name="Profile should show the conflict message for a 409 error" time="0.003" classname="Profile"/>
-  <testcase name="Profile should initialize uploading as false" time="0.003" classname="Profile"/>
-  <testcase name="Profile should show the authentication error notification on 401" time="0.003" classname="Profile"/>
-  <testcase name="Profile should stop saving after a successful update" time="0.002" classname="Profile"/>
-  <testcase name="Profile should apply the updated profile after a successful save" time="0.002" classname="Profile"/>
-  <testcase name="Profile should set loading to true while loading the profile" time="0.002" classname="Profile"/>
-  <testcase name="Profile should set a generic error for non-401 loading errors" time="0.007" classname="Profile"/>
-  <testcase name="TokenService should be created" time="0.001" classname="TokenService"/>
-  <testcase name="TokenService clearTokens should remove both tokens" time="0.004" classname="TokenService clearTokens"/>
-  <testcase name="TokenService clearTokens should remove the access token" time="0.001" classname="TokenService clearTokens"/>
-  <testcase name="TokenService clearTokens should remove the refresh token" time="0" classname="TokenService clearTokens"/>
-  <testcase name="TokenService getRefreshToken should return null when no refresh token exists" time="0" classname="TokenService getRefreshToken"/>
-  <testcase name="TokenService getRefreshToken should return the stored refresh token" time="0.001" classname="TokenService getRefreshToken"/>
-  <testcase name="TokenService isSeller should return false when there are no roles" time="0.001" classname="TokenService isSeller"/>
-  <testcase name="TokenService isSeller should return true when the user has ROLE_SELLER" time="0.001" classname="TokenService isSeller"/>
-  <testcase name="TokenService isSeller should return false when the user does not have ROLE_SELLER" time="0.001" classname="TokenService isSeller"/>
-  <testcase name="TokenService isAuthenticated should return true when an access token exists" time="0" classname="TokenService isAuthenticated"/>
-  <testcase name="TokenService isAuthenticated should return true when the access token is an empty string" time="0.001" classname="TokenService isAuthenticated"/>
-  <testcase name="TokenService isAuthenticated should return false when no access token exists" time="0" classname="TokenService isAuthenticated"/>
-  <testcase name="TokenService setTokens should store the access token" time="0.001" classname="TokenService setTokens"/>
-  <testcase name="TokenService setTokens should replace existing tokens" time="0" classname="TokenService setTokens"/>
-  <testcase name="TokenService setTokens should store the refresh token" time="0.001" classname="TokenService setTokens"/>
-  <testcase name="TokenService setTokens should store both tokens" time="0" classname="TokenService setTokens"/>
-  <testcase name="TokenService getUserId should return null when the token does not contain three segments" time="0" classname="TokenService getUserId"/>
-  <testcase name="TokenService getUserId should return null when the sub claim is not a string" time="0" classname="TokenService getUserId"/>
-  <testcase name="TokenService getUserId should return null when there is no access token" time="0" classname="TokenService getUserId"/>
-  <testcase name="TokenService getUserId should return null when the sub claim is missing" time="0" classname="TokenService getUserId"/>
-  <testcase name="TokenService getUserId should return null when the JWT payload is invalid" time="0.001" classname="TokenService getUserId"/>
-  <testcase name="TokenService getUserId should return the user id from the JWT payload" time="0" classname="TokenService getUserId"/>
-  <testcase name="TokenService getRoles should return an empty array when there is no access token" time="0" classname="TokenService getRoles"/>
-  <testcase name="TokenService getRoles should split roles separated by spaces" time="0.001" classname="TokenService getRoles"/>
-  <testcase name="TokenService getRoles should return an empty array when the token is invalid" time="0" classname="TokenService getRoles"/>
-  <testcase name="TokenService getRoles should return an empty array when scope is missing" time="0.001" classname="TokenService getRoles"/>
-  <testcase name="TokenService getRoles should return roles from the scope claim" time="0" classname="TokenService getRoles"/>
-  <testcase name="TokenService getRoles should ignore extra spaces between roles" time="0.001" classname="TokenService getRoles"/>
-  <testcase name="TokenService getRoles should return an empty array when scope is not a string" time="0" classname="TokenService getRoles"/>
-  <testcase name="TokenService getAccessToken should return the stored access token" time="0.001" classname="TokenService getAccessToken"/>
-  <testcase name="TokenService getAccessToken should return null when no access token exists" time="0.001" classname="TokenService getAccessToken"/>
-  <testcase name="SellerDashboard should copy product images when editing" time="0.007" classname="SellerDashboard"/>
-  <testcase name="SellerDashboard should load products successfully" time="0.002" classname="SellerDashboard"/>
-  <testcase name="SellerDashboard should update an existing product" time="0.003" classname="SellerDashboard"/>
-  <testcase name="SellerDashboard should redirect to login when loading products returns 401" time="0.002" classname="SellerDashboard"/>
-  <testcase name="SellerDashboard should reject an image larger than 1024 KB" time="0.004" classname="SellerDashboard"/>
-  <testcase name="SellerDashboard should reset editing state when closing the form" time="0.003" classname="SellerDashboard"/>
-  <testcase name="SellerDashboard should delete a product successfully" time="0.005" classname="SellerDashboard"/>
-  <testcase name="SellerDashboard should initialize with the correct default values" time="0.003" classname="SellerDashboard"/>
-  <testcase name="SellerDashboard should reject a non-image file" time="0.004" classname="SellerDashboard"/>
-  <testcase name="SellerDashboard should use an empty image array for a product without images" time="0.003" classname="SellerDashboard"/>
-  <testcase name="SellerDashboard should not submit when already saving" time="0.002" classname="SellerDashboard"/>
-  <testcase name="SellerDashboard should accept a valid image" time="0.002" classname="SellerDashboard"/>
-  <testcase name="SellerDashboard should open the form in edit mode" time="0.002" classname="SellerDashboard"/>
-  <testcase name="SellerDashboard should reject a negative price" time="0.002" classname="SellerDashboard"/>
-  <testcase name="SellerDashboard should have a maximum image size of 1024 KB" time="0.003" classname="SellerDashboard"/>
-  <testcase name="SellerDashboard should cancel deletion" time="0.003" classname="SellerDashboard"/>
-  <testcase name="SellerDashboard should show seller error when loading products returns 403" time="0.002" classname="SellerDashboard"/>
-  <testcase name="SellerDashboard should handle a generic error when saving a product" time="0.002" classname="SellerDashboard"/>
-  <testcase name="SellerDashboard should reject a fractional quantity" time="0.002" classname="SellerDashboard"/>
-  <testcase name="SellerDashboard should reject a name shorter than 2 characters" time="0.002" classname="SellerDashboard"/>
-  <testcase name="SellerDashboard should open the form in create mode" time="0.002" classname="SellerDashboard"/>
-  <testcase name="SellerDashboard should not delete a product when another deletion is in progress" time="0.002" classname="SellerDashboard"/>
-  <testcase name="SellerDashboard should show generic error for other loading errors" time="0.003" classname="SellerDashboard"/>
-  <testcase name="SellerDashboard should load product data into the form when editing" time="0.003" classname="SellerDashboard"/>
-  <testcase name="SellerDashboard should not submit an empty form" time="0.002" classname="SellerDashboard"/>
-  <testcase name="SellerDashboard should reject a description shorter than 10 characters" time="0.002" classname="SellerDashboard"/>
-  <testcase name="SellerDashboard should handle a 403 delete error" time="0.002" classname="SellerDashboard"/>
-  <testcase name="SellerDashboard should handle a generic delete error" time="0.002" classname="SellerDashboard"/>
-  <testcase name="SellerDashboard should reject a price of zero" time="0.002" classname="SellerDashboard"/>
-  <testcase name="SellerDashboard should set the product as the delete target" time="0.003" classname="SellerDashboard"/>
-  <testcase name="SellerDashboard should remove a pending image" time="0.003" classname="SellerDashboard"/>
-  <testcase name="SellerDashboard should return the first image as the cover image" time="0.002" classname="SellerDashboard"/>
-  <testcase name="SellerDashboard should reset the form when starting create mode" time="0.002" classname="SellerDashboard"/>
-  <testcase name="SellerDashboard should accept valid images and reject invalid files together" time="0.003" classname="SellerDashboard"/>
-  <testcase name="SellerDashboard should not remove anything for an invalid image index" time="0.005" classname="SellerDashboard"/>
-  <testcase name="SellerDashboard should return null when the product has no images" time="0.009" classname="SellerDashboard"/>
-  <testcase name="SellerDashboard should return zero when the product has no images" time="0.004" classname="SellerDashboard"/>
-  <testcase name="SellerDashboard should keep the product saved when image upload fails" time="0.005" classname="SellerDashboard"/>
-  <testcase name="SellerDashboard should return the number of product images" time="0.002" classname="SellerDashboard"/>
-  <testcase name="SellerDashboard should upload pending images after creating a product" time="0.004" classname="SellerDashboard"/>
-  <testcase name="SellerDashboard should add the created product to the beginning of the products list" time="0.002" classname="SellerDashboard"/>
-  <testcase name="SellerDashboard should finish saving after creating a product without images" time="0.002" classname="SellerDashboard"/>
-  <testcase name="SellerDashboard should create" time="0.002" classname="SellerDashboard"/>
-  <testcase name="SellerDashboard should allow quantity equal to zero" time="0.002" classname="SellerDashboard"/>
-  <testcase name="SellerDashboard should create a product with trimmed values" time="0.002" classname="SellerDashboard"/>
-  <testcase name="SellerDashboard should handle a 403 error when saving a product" time="0.002" classname="SellerDashboard"/>
-  <testcase name="SellerDashboard should close the form" time="0.002" classname="SellerDashboard"/>
-  <testcase name="SellerDashboard should replace images after updating a product" time="0.003" classname="SellerDashboard"/>
-  <testcase name="SellerDashboard should handle a 400 error when saving a product" time="0.004" classname="SellerDashboard"/>
-  <testcase name="sellerGuard should redirect to login when the user is not authenticated" time="0.001" classname="sellerGuard"/>
-  <testcase name="sellerGuard should be created" time="0" classname="sellerGuard"/>
-  <testcase name="sellerGuard should allow access when the user is an authenticated seller" time="0" classname="sellerGuard"/>
-  <testcase name="sellerGuard should not check seller status when the user is not authenticated" time="0" classname="sellerGuard"/>
-  <testcase name="sellerGuard should check seller status only after authentication succeeds" time="0.001" classname="sellerGuard"/>
-  <testcase name="sellerGuard should redirect to home when the user is authenticated but is not a seller" time="0.001" classname="sellerGuard"/>
-  <testcase name="Login should save the tokens after successful login" time="0.002" classname="Login"/>
-  <testcase name="Login should have an invalid form initially" time="0.001" classname="Login"/>
-  <testcase name="Login should require the identifier" time="0.001" classname="Login"/>
-  <testcase name="Login should call AuthService.login with the correct request" time="0.002" classname="Login"/>
-  <testcase name="Login should be created" time="0.001" classname="Login"/>
-  <testcase name="Login should show a success notification after successful login" time="0.003" classname="Login"/>
-  <testcase name="Login should not call login when the form is invalid" time="0.003" classname="Login"/>
-  <testcase name="Login should not navigate when login fails" time="0.002" classname="Login"/>
-  <testcase name="Login should mark all controls as touched when the form is invalid" time="0.001" classname="Login"/>
-  <testcase name="Login should initialize the login form with empty values" time="0.002" classname="Login"/>
-  <testcase name="Login should set the user as authenticated after successful login" time="0.002" classname="Login"/>
-  <testcase name="Login should show the backend error message when login fails" time="0.002" classname="Login"/>
-  <testcase name="Login should accept a valid password" time="0.002" classname="Login"/>
-  <testcase name="Login should navigate to the home page after successful login" time="0.002" classname="Login"/>
-  <testcase name="Login should not authenticate the user when login fails" time="0.002" classname="Login"/>
-  <testcase name="Login should accept a valid identifier" time="0.001" classname="Login"/>
-  <testcase name="Login should not save tokens when login fails" time="0.002" classname="Login"/>
-  <testcase name="Login should require the password" time="0.001" classname="Login"/>
-  <testcase name="Home should retry loading products after a 403 error" time="0.002" classname="Home"/>
   <testcase name="Home should show the authentication error notification" time="0.002" classname="Home"/>
-  <testcase name="Home should clear the previous error message when loading products" time="0.001" classname="Home"/>
-  <testcase name="Home should return the number of product images" time="0.001" classname="Home"/>
-  <testcase name="Home should replace the products when loading succeeds" time="0.003" classname="Home"/>
-  <testcase name="Home should replace the selected product when opening another gallery" time="0.002" classname="Home"/>
-  <testcase name="Home should return null when imagePaths is an empty array" time="0.002" classname="Home"/>
-  <testcase name="Home should return 0 when imagePaths is an empty array" time="0.002" classname="Home"/>
-  <testcase name="Home should be created" time="0.002" classname="Home"/>
-  <testcase name="Home should clear the selected product when closing the gallery" time="0.002" classname="Home"/>
-  <testcase name="Home should return 0 when the product has no images" time="0.002" classname="Home"/>
-  <testcase name="Home should initialize errorMessage as empty" time="0.009" classname="Home"/>
-  <testcase name="Home should return the first image as the cover image" time="0.003" classname="Home"/>
-  <testcase name="Home should initialize selectedProduct as null" time="0.004" classname="Home"/>
-  <testcase name="Home should store the loaded products" time="0.003" classname="Home"/>
-  <testcase name="Home should return null when the product has no images" time="0.003" classname="Home"/>
+  <testcase name="Home should stop loading after products are loaded" time="0.001" classname="Home"/>
+  <testcase name="Home should initialize errorMessage as empty" time="0.002" classname="Home"/>
+  <testcase name="Home should retry loading products after a 403 error" time="0.003" classname="Home"/>
+  <testcase name="Home should initialize selectedProduct as null" time="0.011" classname="Home"/>
   <testcase name="Home should retry loading products after a 401 error" time="0.004" classname="Home"/>
+  <testcase name="Home should logout when a 401 error occurs" time="0.002" classname="Home"/>
   <testcase name="Home should set loading to true while products are loading" time="0.003" classname="Home"/>
-  <testcase name="Home should logout when a 401 error occurs" time="0.003" classname="Home"/>
-  <testcase name="Home should stop loading when loading products fails" time="0.002" classname="Home"/>
-  <testcase name="Home should select a product when opening the gallery" time="0.002" classname="Home"/>
   <testcase name="Home should logout when a 403 error occurs" time="0.003" classname="Home"/>
-  <testcase name="Home should set the generic error message for a non-authentication error" time="0.004" classname="Home"/>
-  <testcase name="Home should stop loading after products are loaded" time="0.003" classname="Home"/>
-  <testcase name="Home should not retry after the authentication error when retryOnAuthError is false" time="0.003" classname="Home"/>
-  <testcase name="Home should load products when the component is created" time="0.004" classname="Home"/>
-  <testcase name="Home should not logout for a non-authentication error" time="0.006" classname="Home"/>
-  <testcase name="UserService should be created" time="0.001" classname="UserService"/>
-  <testcase name="UserService getProfile should return the user profile" time="0.002" classname="UserService getProfile"/>
-  <testcase name="UserService getProfile should return a profile with an avatar" time="0.001" classname="UserService getProfile"/>
-  <testcase name="UserService getProfile should send a GET request to the profile endpoint" time="0" classname="UserService getProfile"/>
-  <testcase name="UserService getProfile should handle profile retrieval errors" time="0.001" classname="UserService getProfile"/>
-  <testcase name="UserService updateProfile should allow SELLER as a valid role" time="0.002" classname="UserService updateProfile"/>
-  <testcase name="UserService updateProfile should handle profile update errors" time="0.001" classname="UserService updateProfile"/>
-  <testcase name="UserService updateProfile should return the updated user profile" time="0.001" classname="UserService updateProfile"/>
-  <testcase name="UserService updateProfile should send a PUT request to the profile endpoint" time="0.001" classname="UserService updateProfile"/>
-  <testcase name="ProductGallery should be created" time="0.012" classname="ProductGallery"/>
-  <testcase name="ProductGallery previous should move backwards through the images" time="0.005" classname="ProductGallery previous"/>
-  <testcase name="ProductGallery previous should do nothing when there is only one image" time="0.004" classname="ProductGallery previous"/>
-  <testcase name="ProductGallery previous should move to the previous image" time="0.003" classname="ProductGallery previous"/>
-  <testcase name="ProductGallery previous should wrap around to the last image from the first image" time="0.002" classname="ProductGallery previous"/>
-  <testcase name="ProductGallery previous should do nothing when there are no images" time="0.003" classname="ProductGallery previous"/>
-  <testcase name="ProductGallery hasMultiple should be true when the product has multiple images" time="0.004" classname="ProductGallery hasMultiple"/>
-  <testcase name="ProductGallery hasMultiple should be false when the product has no images" time="0.003" classname="ProductGallery hasMultiple"/>
-  <testcase name="ProductGallery hasMultiple should be false when the product has one image" time="0.003" classname="ProductGallery hasMultiple"/>
-  <testcase name="ProductGallery close should emit when close is triggered" time="0.003" classname="ProductGallery close"/>
-  <testcase name="ProductGallery next should move through the images in order" time="0.003" classname="ProductGallery next"/>
-  <testcase name="ProductGallery next should do nothing when there is only one image" time="0.002" classname="ProductGallery next"/>
-  <testcase name="ProductGallery next should wrap around to the first image after the last image" time="0.002" classname="ProductGallery next"/>
-  <testcase name="ProductGallery next should do nothing when there are no images" time="0.003" classname="ProductGallery next"/>
-  <testcase name="ProductGallery next should move to the next image" time="0.001" classname="ProductGallery next"/>
-  <testcase name="ProductGallery currentImage should return the selected image" time="0.001" classname="ProductGallery currentImage"/>
-  <testcase name="ProductGallery currentImage should return null when there are no images" time="0.002" classname="ProductGallery currentImage"/>
-  <testcase name="ProductGallery currentImage should return the first image initially" time="0.002" classname="ProductGallery currentImage"/>
-  <testcase name="ProductGallery keyboard navigation should emit close when Escape is pressed" time="0.002" classname="ProductGallery keyboard navigation"/>
-  <testcase name="ProductGallery keyboard navigation should move to the next image when ArrowRight is pressed" time="0.002" classname="ProductGallery keyboard navigation"/>
-  <testcase name="ProductGallery keyboard navigation should move to the previous image when ArrowLeft is pressed" time="0.003" classname="ProductGallery keyboard navigation"/>
-  <testcase name="ProductGallery select should select the requested image" time="0.003" classname="ProductGallery select"/>
-  <testcase name="ProductGallery select should select the last image" time="0.001" classname="ProductGallery select"/>
-  <testcase name="ProductGallery product should reset currentIndex when the product changes" time="0.002" classname="ProductGallery product"/>
-  <testcase name="ProductGallery product should accept a product as input" time="0.002" classname="ProductGallery product"/>
-  <testcase name="ProductGallery images should return the product image paths" time="0.002" classname="ProductGallery images"/>
-  <testcase name="ProductGallery images should return an empty array when imagePaths is null" time="0.002" classname="ProductGallery images"/>
+  <testcase name="Home should not logout for a non-authentication error" time="0.002" classname="Home"/>
+  <testcase name="Home should return null when imagePaths is an empty array" time="0.002" classname="Home"/>
+  <testcase name="Home should clear the previous error message when loading products" time="0.002" classname="Home"/>
+  <testcase name="Home should stop loading when loading products fails" time="0.002" classname="Home"/>
+  <testcase name="Home should return null when the product has no images" time="0.002" classname="Home"/>
+  <testcase name="Home should set the generic error message for a non-authentication error" time="0.003" classname="Home"/>
+  <testcase name="Home should replace the products when loading succeeds" time="0.002" classname="Home"/>
+  <testcase name="Home should be created" time="0.003" classname="Home"/>
+  <testcase name="Home should clear the selected product when closing the gallery" time="0.002" classname="Home"/>
+  <testcase name="Home should return the first image as the cover image" time="0.002" classname="Home"/>
+  <testcase name="Home should replace the selected product when opening another gallery" time="0.002" classname="Home"/>
+  <testcase name="Home should return the number of product images" time="0.002" classname="Home"/>
+  <testcase name="Home should select a product when opening the gallery" time="0.003" classname="Home"/>
+  <testcase name="Home should load products when the component is created" time="0.002" classname="Home"/>
+  <testcase name="Home should not retry after the authentication error when retryOnAuthError is false" time="0.002" classname="Home"/>
+  <testcase name="Home should return 0 when imagePaths is an empty array" time="0.002" classname="Home"/>
+  <testcase name="Home should store the loaded products" time="0.002" classname="Home"/>
+  <testcase name="Home should return 0 when the product has no images" time="0.001" classname="Home"/>
+  <testcase name="SellerDashboard should open the form in create mode" time="0.004" classname="SellerDashboard"/>
+  <testcase name="SellerDashboard should reset the form when starting create mode" time="0.004" classname="SellerDashboard"/>
+  <testcase name="SellerDashboard should reject a non-image file" time="0.002" classname="SellerDashboard"/>
+  <testcase name="SellerDashboard should update an existing product" time="0.002" classname="SellerDashboard"/>
+  <testcase name="SellerDashboard should accept a valid image" time="0.002" classname="SellerDashboard"/>
+  <testcase name="SellerDashboard should copy product images when editing" time="0.002" classname="SellerDashboard"/>
+  <testcase name="SellerDashboard should handle a 403 error when saving a product" time="0.003" classname="SellerDashboard"/>
+  <testcase name="SellerDashboard should show generic error for other loading errors" time="0.003" classname="SellerDashboard"/>
+  <testcase name="SellerDashboard should open the form in edit mode" time="0.002" classname="SellerDashboard"/>
+  <testcase name="SellerDashboard should handle a generic error when saving a product" time="0.003" classname="SellerDashboard"/>
+  <testcase name="SellerDashboard should create" time="0.002" classname="SellerDashboard"/>
+  <testcase name="SellerDashboard should finish saving after creating a product without images" time="0.002" classname="SellerDashboard"/>
+  <testcase name="SellerDashboard should handle a 400 error when saving a product" time="0.003" classname="SellerDashboard"/>
+  <testcase name="SellerDashboard should replace images after updating a product" time="0.004" classname="SellerDashboard"/>
+  <testcase name="SellerDashboard should initialize with the correct default values" time="0.002" classname="SellerDashboard"/>
+  <testcase name="SellerDashboard should reject a fractional quantity" time="0.003" classname="SellerDashboard"/>
+  <testcase name="SellerDashboard should upload pending images after creating a product" time="0.002" classname="SellerDashboard"/>
+  <testcase name="SellerDashboard should allow quantity equal to zero" time="0.004" classname="SellerDashboard"/>
+  <testcase name="SellerDashboard should return null when the product has no images" time="0.004" classname="SellerDashboard"/>
+  <testcase name="SellerDashboard should have a maximum image size of 1024 KB" time="0.003" classname="SellerDashboard"/>
+  <testcase name="SellerDashboard should keep the product saved when image upload fails" time="0.004" classname="SellerDashboard"/>
+  <testcase name="SellerDashboard should create a product with trimmed values" time="0.009" classname="SellerDashboard"/>
+  <testcase name="SellerDashboard should load products successfully" time="0.003" classname="SellerDashboard"/>
+  <testcase name="SellerDashboard should handle a 403 delete error" time="0.003" classname="SellerDashboard"/>
+  <testcase name="SellerDashboard should add the created product to the beginning of the products list" time="0.002" classname="SellerDashboard"/>
+  <testcase name="SellerDashboard should handle a generic delete error" time="0.002" classname="SellerDashboard"/>
+  <testcase name="SellerDashboard should return zero when the product has no images" time="0.003" classname="SellerDashboard"/>
+  <testcase name="SellerDashboard should not delete a product when another deletion is in progress" time="0.002" classname="SellerDashboard"/>
+  <testcase name="SellerDashboard should accept valid images and reject invalid files together" time="0.002" classname="SellerDashboard"/>
+  <testcase name="SellerDashboard should reject a name shorter than 2 characters" time="0.003" classname="SellerDashboard"/>
+  <testcase name="SellerDashboard should return the number of product images" time="0.002" classname="SellerDashboard"/>
+  <testcase name="SellerDashboard should reject a description shorter than 10 characters" time="0.003" classname="SellerDashboard"/>
+  <testcase name="SellerDashboard should reject a price of zero" time="0.003" classname="SellerDashboard"/>
+  <testcase name="SellerDashboard should cancel deletion" time="0.002" classname="SellerDashboard"/>
+  <testcase name="SellerDashboard should set the product as the delete target" time="0.002" classname="SellerDashboard"/>
+  <testcase name="SellerDashboard should reset editing state when closing the form" time="0.002" classname="SellerDashboard"/>
+  <testcase name="SellerDashboard should return the first image as the cover image" time="0.002" classname="SellerDashboard"/>
+  <testcase name="SellerDashboard should reject a negative price" time="0.002" classname="SellerDashboard"/>
+  <testcase name="SellerDashboard should remove a pending image" time="0.002" classname="SellerDashboard"/>
+  <testcase name="SellerDashboard should use an empty image array for a product without images" time="0.002" classname="SellerDashboard"/>
+  <testcase name="SellerDashboard should not submit when already saving" time="0.002" classname="SellerDashboard"/>
+  <testcase name="SellerDashboard should show seller error when loading products returns 403" time="0.002" classname="SellerDashboard"/>
+  <testcase name="SellerDashboard should not submit an empty form" time="0.002" classname="SellerDashboard"/>
+  <testcase name="SellerDashboard should load product data into the form when editing" time="0.002" classname="SellerDashboard"/>
+  <testcase name="SellerDashboard should reject an image larger than 1024 KB" time="0.002" classname="SellerDashboard"/>
+  <testcase name="SellerDashboard should not remove anything for an invalid image index" time="0.003" classname="SellerDashboard"/>
+  <testcase name="SellerDashboard should close the form" time="0.004" classname="SellerDashboard"/>
+  <testcase name="SellerDashboard should delete a product successfully" time="0.003" classname="SellerDashboard"/>
+  <testcase name="SellerDashboard should redirect to login when loading products returns 401" time="0.002" classname="SellerDashboard"/>
+  <testcase name="Login should not call login when the form is invalid" time="0.002" classname="Login"/>
+  <testcase name="Login should mark all controls as touched when the form is invalid" time="0.001" classname="Login"/>
+  <testcase name="Login should require the password" time="0.003" classname="Login"/>
+  <testcase name="Login should accept a valid password" time="0.003" classname="Login"/>
+  <testcase name="Login should require the identifier" time="0.002" classname="Login"/>
+  <testcase name="Login should navigate to the home page after successful login" time="0.002" classname="Login"/>
+  <testcase name="Login should not save tokens when login fails" time="0.002" classname="Login"/>
+  <testcase name="Login should accept a valid identifier" time="0.002" classname="Login"/>
+  <testcase name="Login should initialize the login form with empty values" time="0.001" classname="Login"/>
+  <testcase name="Login should have an invalid form initially" time="0.002" classname="Login"/>
+  <testcase name="Login should set the user as authenticated after successful login" time="0.003" classname="Login"/>
+  <testcase name="Login should show the backend error message when login fails" time="0.004" classname="Login"/>
+  <testcase name="Login should not authenticate the user when login fails" time="0.004" classname="Login"/>
+  <testcase name="Login should be created" time="0.009" classname="Login"/>
+  <testcase name="Login should call AuthService.login with the correct request" time="0.003" classname="Login"/>
+  <testcase name="Login should show a success notification after successful login" time="0.002" classname="Login"/>
+  <testcase name="Login should not navigate when login fails" time="0.002" classname="Login"/>
+  <testcase name="Login should save the tokens after successful login" time="0.002" classname="Login"/>
   <testcase name="AuthService should be created" time="0.001" classname="AuthService"/>
-  <testcase name="AuthService logout should clear the tokens" time="0.001" classname="AuthService logout"/>
-  <testcase name="AuthService logout should set isAuthenticated to false" time="0.001" classname="AuthService logout"/>
+  <testcase name="AuthService setAuthenticated should keep isAuthenticated true when called multiple times" time="0.001" classname="AuthService setAuthenticated"/>
+  <testcase name="AuthService setAuthenticated should set isAuthenticated to true" time="0.001" classname="AuthService setAuthenticated"/>
+  <testcase name="AuthService isAuthenticated should initialize with the authentication state from TokenService" time="0" classname="AuthService isAuthenticated"/>
+  <testcase name="AuthService refresh should return the refreshed authentication response" time="0.001" classname="AuthService refresh"/>
+  <testcase name="AuthService refresh should encode the refresh token in the URL" time="0.001" classname="AuthService refresh"/>
+  <testcase name="AuthService refresh should send a POST request to the refresh endpoint" time="0" classname="AuthService refresh"/>
+  <testcase name="AuthService refresh should handle refresh errors" time="0.001" classname="AuthService refresh"/>
   <testcase name="AuthService logout should clear tokens and set authentication to false" time="0.001" classname="AuthService logout"/>
-  <testcase name="AuthService login should send a POST request to the login endpoint" time="0.001" classname="AuthService login"/>
+  <testcase name="AuthService logout should clear the tokens" time="0" classname="AuthService logout"/>
+  <testcase name="AuthService logout should set isAuthenticated to false" time="0.001" classname="AuthService logout"/>
+  <testcase name="AuthService login should send a POST request to the login endpoint" time="0" classname="AuthService login"/>
   <testcase name="AuthService login should handle login errors" time="0.001" classname="AuthService login"/>
-  <testcase name="AuthService login should return the authentication response" time="0.001" classname="AuthService login"/>
-  <testcase name="AuthService register should send a POST request to the register endpoint" time="0.001" classname="AuthService register"/>
+  <testcase name="AuthService login should return the authentication response" time="0" classname="AuthService login"/>
   <testcase name="AuthService register should allow SELLER as a valid role" time="0" classname="AuthService register"/>
   <testcase name="AuthService register should return the registration response" time="0.001" classname="AuthService register"/>
   <testcase name="AuthService register should handle registration errors" time="0" classname="AuthService register"/>
-  <testcase name="AuthService refresh should send a POST request to the refresh endpoint" time="0" classname="AuthService refresh"/>
-  <testcase name="AuthService refresh should handle refresh errors" time="0.001" classname="AuthService refresh"/>
-  <testcase name="AuthService refresh should encode the refresh token in the URL" time="0" classname="AuthService refresh"/>
-  <testcase name="AuthService refresh should return the refreshed authentication response" time="0.001" classname="AuthService refresh"/>
-  <testcase name="AuthService isAuthenticated should initialize with the authentication state from TokenService" time="0" classname="AuthService isAuthenticated"/>
-  <testcase name="AuthService setAuthenticated should keep isAuthenticated true when called multiple times" time="0.001" classname="AuthService setAuthenticated"/>
-  <testcase name="AuthService setAuthenticated should set isAuthenticated to true" time="0.001" classname="AuthService setAuthenticated"/>
-  <testcase name="authInterceptor should be created" time="0" classname="authInterceptor"/>
-  <testcase name="authInterceptor should pass the request through when there is no access token" time="0.001" classname="authInterceptor"/>
-  <testcase name="authInterceptor should add the access token to the authorization header" time="0.001" classname="authInterceptor"/>
-  <testcase name="authInterceptor should propagate non-401 errors without refreshing the token" time="0.001" classname="authInterceptor"/>
-  <testcase name="authInterceptor should preserve the original request method when retrying after refresh" time="0.005" classname="authInterceptor"/>
-  <testcase name="authInterceptor should refresh the token when the request returns 401" time="0.001" classname="authInterceptor"/>
-  <testcase name="authInterceptor should propagate the original 401 error when token refresh fails" time="0.001" classname="authInterceptor"/>
-  <testcase name="authInterceptor should retry the original request only with the fresh token" time="0" classname="authInterceptor"/>
-  <testcase name="authInterceptor should not refresh the token when the original request has no access token" time="0.001" classname="authInterceptor"/>
-  <testcase name="authInterceptor should preserve the original request URL when retrying after refresh" time="0" classname="authInterceptor"/>
-  <testcase name="authInterceptor should pass auth requests through without adding an authorization header" time="0" classname="authInterceptor"/>
+  <testcase name="AuthService register should send a POST request to the register endpoint" time="0.001" classname="AuthService register"/>
+  <testcase name="sellerGuard should check seller status only after authentication succeeds" time="0.001" classname="sellerGuard"/>
+  <testcase name="sellerGuard should be created" time="0" classname="sellerGuard"/>
+  <testcase name="sellerGuard should not check seller status when the user is not authenticated" time="0" classname="sellerGuard"/>
+  <testcase name="sellerGuard should allow access when the user is an authenticated seller" time="0.001" classname="sellerGuard"/>
+  <testcase name="sellerGuard should redirect to home when the user is authenticated but is not a seller" time="0" classname="sellerGuard"/>
+  <testcase name="sellerGuard should redirect to login when the user is not authenticated" time="0.001" classname="sellerGuard"/>
+  <testcase name="ProductGallery close should emit when close is triggered" time="0.011" classname="ProductGallery close"/>
+  <testcase name="ProductGallery previous should move to the previous image" time="0.003" classname="ProductGallery previous"/>
+  <testcase name="ProductGallery previous should do nothing when there is only one image" time="0.002" classname="ProductGallery previous"/>
+  <testcase name="ProductGallery previous should do nothing when there are no images" time="0.003" classname="ProductGallery previous"/>
+  <testcase name="ProductGallery previous should wrap around to the last image from the first image" time="0.004" classname="ProductGallery previous"/>
+  <testcase name="ProductGallery previous should move backwards through the images" time="0.003" classname="ProductGallery previous"/>
+  <testcase name="ProductGallery should be created" time="0.002" classname="ProductGallery"/>
+  <testcase name="ProductGallery keyboard navigation should move to the next image when ArrowRight is pressed" time="0.002" classname="ProductGallery keyboard navigation"/>
+  <testcase name="ProductGallery keyboard navigation should emit close when Escape is pressed" time="0.002" classname="ProductGallery keyboard navigation"/>
+  <testcase name="ProductGallery keyboard navigation should move to the previous image when ArrowLeft is pressed" time="0.003" classname="ProductGallery keyboard navigation"/>
+  <testcase name="ProductGallery currentImage should return the first image initially" time="0.004" classname="ProductGallery currentImage"/>
+  <testcase name="ProductGallery currentImage should return the selected image" time="0.002" classname="ProductGallery currentImage"/>
+  <testcase name="ProductGallery currentImage should return null when there are no images" time="0.002" classname="ProductGallery currentImage"/>
+  <testcase name="ProductGallery hasMultiple should be false when the product has no images" time="0.002" classname="ProductGallery hasMultiple"/>
+  <testcase name="ProductGallery hasMultiple should be true when the product has multiple images" time="0.001" classname="ProductGallery hasMultiple"/>
+  <testcase name="ProductGallery hasMultiple should be false when the product has one image" time="0.001" classname="ProductGallery hasMultiple"/>
+  <testcase name="ProductGallery select should select the last image" time="0.002" classname="ProductGallery select"/>
+  <testcase name="ProductGallery select should select the requested image" time="0.002" classname="ProductGallery select"/>
+  <testcase name="ProductGallery next should do nothing when there are no images" time="0.002" classname="ProductGallery next"/>
+  <testcase name="ProductGallery next should do nothing when there is only one image" time="0.002" classname="ProductGallery next"/>
+  <testcase name="ProductGallery next should move to the next image" time="0.002" classname="ProductGallery next"/>
+  <testcase name="ProductGallery next should move through the images in order" time="0.002" classname="ProductGallery next"/>
+  <testcase name="ProductGallery next should wrap around to the first image after the last image" time="0.001" classname="ProductGallery next"/>
+  <testcase name="ProductGallery product should reset currentIndex when the product changes" time="0.001" classname="ProductGallery product"/>
+  <testcase name="ProductGallery product should accept a product as input" time="0.003" classname="ProductGallery product"/>
+  <testcase name="ProductGallery images should return an empty array when imagePaths is null" time="0.003" classname="ProductGallery images"/>
+  <testcase name="ProductGallery images should return the product image paths" time="0.004" classname="ProductGallery images"/>
+  <testcase name="NotificationError should be created" time="0.001" classname="NotificationError"/>
+  <testcase name="NotificationError getMessage should return the current message" time="0.001" classname="NotificationError getMessage"/>
+  <testcase name="NotificationError getColor should return the current color" time="0.001" classname="NotificationError getColor"/>
+  <testcase name="NotificationError should have green color initially" time="0" classname="NotificationError"/>
+  <testcase name="NotificationError show should set the specified color" time="0.001" classname="NotificationError show"/>
+  <testcase name="NotificationError show should replace the previous color" time="0" classname="NotificationError show"/>
+  <testcase name="NotificationError show should replace the previous message" time="0.001" classname="NotificationError show"/>
+  <testcase name="NotificationError show should allow green to be explicitly specified" time="0" classname="NotificationError show"/>
+  <testcase name="NotificationError show should use green as the default color" time="0.001" classname="NotificationError show"/>
+  <testcase name="NotificationError show should set the message" time="0.001" classname="NotificationError show"/>
+  <testcase name="NotificationError should have null message initially" time="0.002" classname="NotificationError"/>
   <system-out>
-    <![CDATA[Chrome Headless 153.0.0.0 (Linux 0.0.0) ERROR: 'DEPRECATION: jasmine-core isn't an ES module but it was loaded as one. This is not a supported configuration.
+    <![CDATA[Chrome Headless 155.0.0.0 (Linux 0.0.0) ERROR: 'DEPRECATION: jasmine-core isn't an ES module but it was loaded as one. This is not a supported configuration.
 Error: 
     at <Jasmine>
-    at ContextKarma.start (http://localhost:9876/absolute/home/maynaou/Desktop/buy-01/frontend/node_modules/karma-jasmine/lib/adapter.js?db55991565c0f0381ab0fb3c340df5194b4bef99:513:16)
+    at ContextKarma.start (http://localhost:9876/absolute/home/hkouki/Desktop/buy-01/frontend/node_modules/karma-jasmine/lib/adapter.js?db55991565c0f0381ab0fb3c340df5194b4bef99:513:16)
     at ContextKarma.loaded (http://localhost:9876/context.js:180:14)
     at http://localhost:9876/context.html:152:22
 Note: This message will be shown only once. Set the verboseDeprecations config property to true to see every occurrence.'
-,Chrome Headless 153.0.0.0 (Linux 0.0.0) LOG: HttpErrorResponse{headers: _HttpHeaders{headers: Map{}, normalizedNames: Map{}, lazyInit: undefined, lazyUpdate: null}, status: 403, statusText: 'Forbidden', url: null, ok: false, type: undefined, redirected: undefined, responseType: undefined, name: 'HttpErrorResponse', message: 'Http failure response for (unknown url): 403 Forbidden', error: Object{message: 'Forbidden'}}
-,Chrome Headless 153.0.0.0 (Linux 0.0.0) LOG: HttpErrorResponse{headers: _HttpHeaders{headers: Map{}, normalizedNames: Map{}, lazyInit: undefined, lazyUpdate: null}, status: 401, statusText: 'Unauthorized', url: null, ok: false, type: undefined, redirected: undefined, responseType: undefined, name: 'HttpErrorResponse', message: 'Http failure response for (unknown url): 401 Unauthorized', error: Object{message: 'Token expired'}}
-,Chrome Headless 153.0.0.0 (Linux 0.0.0) LOG: HttpErrorResponse{headers: _HttpHeaders{headers: Map{}, normalizedNames: Map{}, lazyInit: undefined, lazyUpdate: null}, status: 401, statusText: 'Unauthorized', url: null, ok: false, type: undefined, redirected: undefined, responseType: undefined, name: 'HttpErrorResponse', message: 'Http failure response for (unknown url): 401 Unauthorized', error: Object{message: 'Unauthorized'}}
-,Chrome Headless 153.0.0.0 (Linux 0.0.0) LOG: HttpErrorResponse{headers: _HttpHeaders{headers: Map{}, normalizedNames: Map{}, lazyInit: undefined, lazyUpdate: null}, status: 401, statusText: 'Unauthorized', url: null, ok: false, type: undefined, redirected: undefined, responseType: undefined, name: 'HttpErrorResponse', message: 'Http failure response for (unknown url): 401 Unauthorized', error: Object{message: 'Unauthorized'}}
-,Chrome Headless 153.0.0.0 (Linux 0.0.0) LOG: HttpErrorResponse{headers: _HttpHeaders{headers: Map{}, normalizedNames: Map{}, lazyInit: undefined, lazyUpdate: null}, status: 403, statusText: 'Forbidden', url: null, ok: false, type: undefined, redirected: undefined, responseType: undefined, name: 'HttpErrorResponse', message: 'Http failure response for (unknown url): 403 Forbidden', error: Object{message: 'Forbidden'}}
+,Chrome Headless 155.0.0.0 (Linux 0.0.0) LOG: HttpErrorResponse{headers: _HttpHeaders{headers: Map{}, normalizedNames: Map{}, lazyInit: undefined, lazyUpdate: null}, status: 401, statusText: 'Unauthorized', url: null, ok: false, type: undefined, redirected: undefined, responseType: undefined, name: 'HttpErrorResponse', message: 'Http failure response for (unknown url): 401 Unauthorized', error: Object{message: 'Token expired'}}
+,Chrome Headless 155.0.0.0 (Linux 0.0.0) LOG: HttpErrorResponse{headers: _HttpHeaders{headers: Map{}, normalizedNames: Map{}, lazyInit: undefined, lazyUpdate: null}, status: 403, statusText: 'Forbidden', url: null, ok: false, type: undefined, redirected: undefined, responseType: undefined, name: 'HttpErrorResponse', message: 'Http failure response for (unknown url): 403 Forbidden', error: Object{message: 'Forbidden'}}
+,Chrome Headless 155.0.0.0 (Linux 0.0.0) LOG: HttpErrorResponse{headers: _HttpHeaders{headers: Map{}, normalizedNames: Map{}, lazyInit: undefined, lazyUpdate: null}, status: 401, statusText: 'Unauthorized', url: null, ok: false, type: undefined, redirected: undefined, responseType: undefined, name: 'HttpErrorResponse', message: 'Http failure response for (unknown url): 401 Unauthorized', error: Object{message: 'Unauthorized'}}
+,Chrome Headless 155.0.0.0 (Linux 0.0.0) LOG: HttpErrorResponse{headers: _HttpHeaders{headers: Map{}, normalizedNames: Map{}, lazyInit: undefined, lazyUpdate: null}, status: 401, statusText: 'Unauthorized', url: null, ok: false, type: undefined, redirected: undefined, responseType: undefined, name: 'HttpErrorResponse', message: 'Http failure response for (unknown url): 401 Unauthorized', error: Object{message: 'Unauthorized'}}
+,Chrome Headless 155.0.0.0 (Linux 0.0.0) LOG: HttpErrorResponse{headers: _HttpHeaders{headers: Map{}, normalizedNames: Map{}, lazyInit: undefined, lazyUpdate: null}, status: 403, statusText: 'Forbidden', url: null, ok: false, type: undefined, redirected: undefined, responseType: undefined, name: 'HttpErrorResponse', message: 'Http failure response for (unknown url): 403 Forbidden', error: Object{message: 'Forbidden'}}
 
 ]]>
   </system-out>
