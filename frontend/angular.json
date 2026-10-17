@@ -80,7 +80,8 @@
           "builder": "@angular/build:unit-test",
           "options": {
             "runner": "karma",
-            "runnerConfig": "karma.conf.js"
+            "runnerConfig": "karma.conf.js",
+            "coverage": true
           }
         }
       }

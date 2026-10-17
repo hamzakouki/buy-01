@@ -97,7 +97,7 @@ mkdir -p ~/.local/bin
 mv ngrok ~/.local/bin/
 echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.zshrc
 source ~/.zshrc
-ngrok config add-authtoken <key>
+ngrok config add-authtoken 3JPijVZkUwHS3JaWcjE0wbEYIqn_36YRWhS4D3nujmTXTRwLu
 ```
 
 ```bash
